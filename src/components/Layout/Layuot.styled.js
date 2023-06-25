@@ -4,11 +4,10 @@ export const Container = styled.div`
   margin: 0 auto;
   padding: 0 16px;
   max-width: 1080px;
+`;
+/* position: relative; */
 
-  /* position: relative; */
-
-  /* display: grid;
+/* display: grid;
   grid-template-columns: 1fr;
   grid-gap: 16px;
   padding-bottom: 24px; */
-`;
