@@ -8,3 +8,16 @@ export const fetchRandomCoctail = async () => {
   const data = response.data.drinks[0];
   return data;
 };
+
+export const searchCoctailByName = async () => {
+  const response = await axios.get('/search.php?f=m');
+  const data = response.data.drinks;
+  return data;
+};
+
+export const getFullInfoAboutCoctailById = async id => {
+  const response = await axios.get(`/lookup.php?i=${id}`);
+  const data = response.data.drinks[0];
+  console.log(data);
+  return data;
+};

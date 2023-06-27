@@ -11,8 +11,9 @@ const Home = lazy(() => import('../Pages/Home'));
 const Coctails = lazy(() => import('../Pages/Coctails'));
 const Ingridients = lazy(() => import('../Pages/Ingridients'));
 const NonAlcogolic = lazy(() => import('../Pages/NonAlcogolic'));
+const OneCoctail = lazy(() => import('../Pages/OneCoctail'));
 
-//1. після додавання react-query не йде запит;
+//1. Не виводяться данні на сторінці OneCoctail;
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/coctails" element={<Coctails />} />
             <Route path="/ingridients" element={<Ingridients />} />
             <Route path="/non-alcogolic" element={<NonAlcogolic />} />
+            <Route path="/coctails/:id" element={<OneCoctail />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Suspense>
