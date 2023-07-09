@@ -6,7 +6,7 @@ import { useQuery } from '@tanstack/react-query';
 
 const RandomCoctail = () => {
   const { data, isError, isLoading } = useQuery({
-    queryKey: 'randomCoctails',
+    queryKey: ['randomCoctails'],
     queryFn: fetchRandomCoctail,
   });
 
