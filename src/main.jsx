@@ -1,7 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-// import App from './components/App';
-// import "./index.css";
 import {
   QueryClient,
   QueryClientProvider,
@@ -11,18 +9,14 @@ import {
   RouterProvider,
   createBrowserRouter,
 } from 'react-router-dom';
-// import { Navigation } from './Navigation/Navigation';
-import { Layout } from './components/Layout/Layout';
-import ErrorPage from './Pages/ErrorPage';
-import Home from './Pages/Home';
-import Ingridients from './Pages/Ingridients';
-import NonAlcogolics from './Pages/NonAlcogolics';
+import MainLayout from './loyouts/MainLoyout/MainLoyout';
+import ErrorPage from './pages/ErrorPage';
+import Home from './pages/Home';
+import Ingridients from './pages/Ingridients';
+import NonAlcogolics from './pages/NonAlcogolics';
 
-import {
-  loader as coctalByNameLoader,
-  action as coctailByNameAction,
-} from './Pages/Coctails';
-import Coctails from './Pages/Coctails';
+import Coctails from './pages/Coctails';
+import OneCoctail from './Pages/OneCoctail';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -35,7 +29,7 @@ const queryClient = new QueryClient({
 let router = createBrowserRouter([
   {
     path: '/',
-    element: <Layout />,
+    element: <MainLayout />,
     errorElement: <ErrorPage />,
     children: [
       {
@@ -45,8 +39,6 @@ let router = createBrowserRouter([
       {
         path: '/coctails',
         element: <Coctails />,
-        loader: coctalByNameLoader(queryClient),
-        action: coctailByNameAction(queryClient),
       },
       {
         path: '/ingridients',
@@ -55,6 +47,10 @@ let router = createBrowserRouter([
       {
         path: '/non-alcogolics',
         element: <NonAlcogolics />,
+      },
+      {
+        path: '/:id',
+        element: <OneCoctail />,
       },
     ],
   },

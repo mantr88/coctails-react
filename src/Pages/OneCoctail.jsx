@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom';
 
-import { BackLink } from '../components/BackLink/BackLink';
-import { CoctailInfo } from '../components/CoctailInfo/CoctailInfo';
+import BackLink from '../modules/about-coctail/BackLink/BackLink';
+import CoctailInfo from '../modules/about-coctail/CoctailInfo/CoctailInfo';
 
 const OneCoctail = () => {
   const location = useLocation();

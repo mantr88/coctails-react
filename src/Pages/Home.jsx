@@ -1,4 +1,4 @@
-import RandomCoctail from '../components/RandomCoctail/RandomCoctail';
+import RandomCoctail from '../modules/home/RandomCoctail/RandomCoctail';
 
 const Home = () => {
   return (
