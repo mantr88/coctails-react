@@ -19,10 +19,11 @@ import Coctails from './pages/Coctails';
 import OneCoctail from './Pages/OneCoctail';
 //*******************************************
 // Зробив нову структуру папок.
-// Зробив запит на сторінці Coctails
+// Зробив запит на сторінці Coctails.
+// Зробив перехід по кліку на карточку коктейлю на сторінку OneCocail;
 // Наступні кроки:
 // 1. Увʼязати ReactQuery and React router dom на сторінці Coctails;
-// 2. Зробити перехід покліку на карточку коктейлю на сторінку OneCocail;
+//
 //*******************************************
 const queryClient = new QueryClient({
   defaultOptions: {
