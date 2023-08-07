@@ -14,8 +14,6 @@ const CoctailInfo = () => {
   });
   const coctail = data;
 
-  // console.log(data);
-
   if (isError) {
     return <div>Error data</div>;
   }

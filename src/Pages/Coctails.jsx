@@ -12,6 +12,8 @@ const Coctails = () => {
   const { isError, isLoading, data, error } = useQuery({
     query: ['coctailsByName'],
     queryFn: () => searchCoctailByName(searchString),
+    keepPreviousData: true,
+    refetchOnWindowFocus: false,
   });
 
   const handleSubmit = evt => {
