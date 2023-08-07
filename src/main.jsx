@@ -9,15 +9,21 @@ import {
   RouterProvider,
   createBrowserRouter,
 } from 'react-router-dom';
+
 import MainLayout from './loyouts/MainLoyout/MainLoyout';
 import ErrorPage from './pages/ErrorPage';
 import Home from './pages/Home';
 import Ingridients from './pages/Ingridients';
 import NonAlcogolics from './pages/NonAlcogolics';
-
 import Coctails from './pages/Coctails';
 import OneCoctail from './Pages/OneCoctail';
-
+//*******************************************
+// Зробив нову структуру папок.
+// Зробив запит на сторінці Coctails
+// Наступні кроки:
+// 1. Увʼязати ReactQuery and React router dom на сторінці Coctails;
+// 2. Зробити перехід покліку на карточку коктейлю на сторінку OneCocail;
+//*******************************************
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {

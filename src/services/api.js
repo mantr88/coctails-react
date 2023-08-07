@@ -9,8 +9,7 @@ export const fetchRandomCoctail = async () => {
 };
 
 export const searchCoctailByName = async searchString => {
-  console.log(searchString);
-  const response = await axios.get(`/search.php?f=${searchString}`);
+  const response = await axios.get(`/search.php?s=${searchString}`);
   const data = response.data.drinks;
   return data;
 };

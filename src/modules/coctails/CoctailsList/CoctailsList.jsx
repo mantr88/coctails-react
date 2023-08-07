@@ -5,11 +5,10 @@ import {
   StyledLink,
 } from './CoctailsList.styled';
 
-const CoctailsList = () => {
+const CoctailsList = ({ coctails }) => {
   return (
     <ListContainer>
-      <div>Coctails page!</div>
-      {/* {coctails &&
+      {coctails &&
         coctails.map(({ idDrink, strDrinkThumb, strDrink }) => (
           <CardWrapper key={idDrink}>
             <StyledLink
@@ -20,7 +19,7 @@ const CoctailsList = () => {
               <CoctailName>{strDrink}</CoctailName>
             </StyledLink>
           </CardWrapper>
-        ))} */}
+        ))}
     </ListContainer>
   );
 };
