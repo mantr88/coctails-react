@@ -9,8 +9,8 @@ const Coctails = () => {
     query: '',
   });
   const searchString = searchParams.get('query');
-  const { isError, isLoading, data, error } = useQuery({
-    query: ['coctailsByName'],
+  const { isError, isLoading, data } = useQuery({
+    queryKey: ['coctailsByName'],
     queryFn: () => searchCoctailByName(searchString),
     keepPreviousData: true,
     refetchOnWindowFocus: false,
@@ -28,7 +28,13 @@ const Coctails = () => {
   return (
     <main>
       <SearchBox onSubmit={handleSubmit} />
-      <CoctailsList coctails={data} />
+      {isLoading && <div>LOADING...</div>}
+      {data && !isLoading && !isError && (
+        <CoctailsList coctails={data} />
+      )}
+      {!data && !isLoading && !isError && (
+        <div>Please enter name of coctail</div>
+      )}
     </main>
   );
 };
