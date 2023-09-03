@@ -22,16 +22,13 @@ import OneCoctail from './Pages/OneCoctail';
 // Зробив запит на сторінці Coctails.
 // Зробив перехід по кліку на карточку коктейлю на сторінку OneCocail;
 // Наступні кроки:
-// 1. Увʼязати ReactQuery and React router dom на сторінці Coctails;
+// 1. Га сторінці Coctails зробити так щоб при переході на сторінку не завантажувалась
+// колекція з кешу.
+
+// Увʼязати ReactQuery and React router dom на сторінці Coctails;
 //
 //*******************************************
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 1000 * 10,
-    },
-  },
-});
+const queryClient = new QueryClient();
 
 let router = createBrowserRouter([
   {

@@ -8,9 +8,11 @@ const Coctails = () => {
   const [searchParams, setSearchParams] = useSearchParams({
     query: '',
   });
+
   const searchString = searchParams.get('query');
-  const { isError, isLoading, data } = useQuery({
-    queryKey: ['coctailsByName'],
+
+  const { isError, isLoading, data, isSuccess } = useQuery({
+    queryKey: ['coctailsByName', searchString],
     queryFn: () => searchCoctailByName(searchString),
     keepPreviousData: true,
     refetchOnWindowFocus: false,
@@ -18,7 +20,6 @@ const Coctails = () => {
 
   const handleSubmit = evt => {
     evt.preventDefault();
-    console.log(evt.target.elements.query.value);
 
     const searchQueryStr = evt.target.elements.query.value;
     const searchQueryStrTrim = searchQueryStr.trim();
@@ -35,6 +36,7 @@ const Coctails = () => {
       {!data && !isLoading && !isError && (
         <div>Please enter name of coctail</div>
       )}
+      {!isSuccess && <div>Enter another name of coctail</div>}
     </main>
   );
 };
